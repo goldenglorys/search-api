@@ -9,17 +9,16 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const SearchController_1 = require("./SearchController");
-exports.default = [
-    {
-        path: "/api/v1/search",
-        method: "get",
-        handler: [
-            ({ query }, res) => __awaiter(void 0, void 0, void 0, function* () {
-                const result = yield SearchController_1.getPlacesByName(query.q);
-                res.status(200).send(result);
-            }),
-        ],
-    },
-];
-//# sourceMappingURL=routes.js.map
+exports.getPlacesByName = void 0;
+const OpenCageDataProvider_1 = require("./providers/OpenCageDataProvider");
+const getPlacesByName = (q) => __awaiter(void 0, void 0, void 0, function* () {
+    if (q.length < 3) {
+        return {
+            type: "FeatureCollection",
+            features: [],
+        };
+    }
+    return yield OpenCageDataProvider_1.getPlaces(q);
+});
+exports.getPlacesByName = getPlacesByName;
+//# sourceMappingURL=SearchController.js.map
