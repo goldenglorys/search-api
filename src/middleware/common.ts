@@ -1,3 +1,6 @@
+//! A common.ts file contains the middleware like cors, compression and, the setup for body parsing.
+//! Later we will add middleware for logging, security, caching and more.
+
 import { Router } from "express";
 import cors from "cors";
 import parser from "body-parser";

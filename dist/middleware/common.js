@@ -1,4 +1,6 @@
 "use strict";
+//! A common.ts file contains the middleware like cors, compression and, the setup for body parsing.
+//! Later we will add middleware for logging, security, caching and more.
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
