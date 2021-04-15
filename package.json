@@ -1,0 +1,25 @@
+{
+  "name": "search-api",
+  "version": "1.0.0",
+  "description": "[Link to article]('https://itnext.io/production-ready-node-js-rest-apis-setup-using-typescript-postgresql-and-redis-a9525871407')",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/goldenglorys/search-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/goldenglorys/search-api/issues"
+  },
+  "homepage": "https://github.com/goldenglorys/search-api#readme",
+  "dependencies": {
+    "tsc-watch": "^4.2.9",
+    "typescript": "^4.2.4"
+  }
+}
