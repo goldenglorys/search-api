@@ -2,6 +2,7 @@ import http from "http";
 import express from "express";
 import { applyMiddleware, applyRoutes } from "./utils";
 import middleware from "./middleware";
+import errorHandlers from "./middleware/errorHandlers";
 import routes from "./services";
 
 // Handling both uncaughtException and unhandledRejection is super important.
@@ -21,6 +22,11 @@ process.on("unhandledRejection", (e) => {
 const router = express();
 applyMiddleware(middleware, router);
 applyRoutes(routes, router);
+// Error handlers are quite a specific type of middleware .
+// Usually, we inject middleware before handling user routes.
+// But for error handling — after, when something bad has happened in our controller.
+// Or if threw an exception and wanted to catch it by our error handlers middleware.
+applyMiddleware(errorHandlers, router);
 
 const { PORT = 3000 } = process.env;
 const server = http.createServer(router);
