@@ -1,0 +1,12 @@
+# the Node.js event loop uses only one core of a processor to execute its code.
+# Node.js has a cluster module to spawn child processes — worker processes. They all share the same port.
+# But instead of spawning processes directly with the cluster module we will use PM2 —
+# Process Manager for Node.js. It has great features like a load balancing and auto-restarting node instances.
+# Specify how many instances we want to create.
+# The script which will be executed to start an app
+# Set the exec_mode to cluster, so PM2 know we want to load balance between each instance.
+
+apps:
+  - script: ./dist/server.js
+    instances: max
+    exec_mode: cluster
