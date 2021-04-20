@@ -13,8 +13,13 @@
     "type": "git",
     "url": "git+https://github.com/goldenglorys/search-api.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "heroku",
+    "typescript",
+    "node.js",
+    "api"
+  ],
+  "author": "Olusola Glory",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/goldenglorys/search-api/issues"
